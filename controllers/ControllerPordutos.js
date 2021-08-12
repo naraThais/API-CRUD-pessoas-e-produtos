@@ -5,7 +5,7 @@ const dbProdutos ={
 }
  dbProdutos.insert = async (req, _res) =>{
    let data = {
-      "usario_id":req.body.usuario_id,
+      "usuario_id":req.body.usuario_id,
       "nome":req.body.nome,
       "quantidade":req.body.quantidade
    }
@@ -28,7 +28,22 @@ dbProdutos.select =  async(req, _res) =>{
      }
      const response = await db.query('UPDATE produtos SET ? WHERE idProduto = ?', [data, idProduto]);
      return _res.json(response);
+    
+  },
+
+  dbProdutos.delete = async(req, _res) =>{
+       let idProduto = req.params.idProduto;
+         const response = await db.query(`DELETE FROM produtos WHERE idProduto = ${idProduto}`);
+            _res.json(response);
+  },
+  dbProdutos.findById = async (req, _res) => {
+      let idProduto = req.params.idProduto;
+       const response = await db.query(`SELECT * FROM produtos WHERE idProduto = ${idProduto}`);
+            _res.json(response[0]);
   }
 
 module.exports = dbProdutos
+
+
+
 

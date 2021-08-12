@@ -23,8 +23,16 @@ app.delete('/usuario/:id',   ControllerUsers.delete);
 const ControllerProdutos = require('./controllers/ControllerPordutos');
 // Produtos
 app.post('/produto/insert', ControllerProdutos.insert);
+
 app.get('/produto/select', ControllerProdutos.select);
+
 app.put('/produto/update/:idProduto', ControllerProdutos.update);
+
+app.delete('/produto/:idProduto', ControllerProdutos.delete);
+
+app.get('/produto/:idProduto', ControllerProdutos.findById);
+
+
 
 
 
