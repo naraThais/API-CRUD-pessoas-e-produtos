@@ -1,3 +1,2 @@
 
-nodejs+express+mysql
-npm start
+** nodejs+express+mysql **
