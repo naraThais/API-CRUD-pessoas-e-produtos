@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `apinode`.`produtos` (
   `quantidade` INT NOT NULL,
   `usuario_id` INT(11) NOT NULL,
   PRIMARY KEY (`idPorduto`, `usuario_id`),
-  INDEX `fk_produtos_usuario_idx` (`usuario_id` ASC) VISIBLE)
+  INDEX `fk_produtos_usuario_idx` (`usuario_id` ASC))
 ENGINE = MyISAM
 DEFAULT CHARACTER SET = latin1;
 
